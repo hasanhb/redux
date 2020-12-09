@@ -25,13 +25,7 @@ export default function (state = initState, action) {
       };
 
     case EDIT_TASK:
-      //   return {
-      //     ...state,
-      //     todos: state.todo.map((todo) =>
-      //       todo.id === action.id ? { ...todo, text: action.newText } : todo
-      //     ),
-      //   };
-
+      
       return {
         ...state,
         todos: state.todos.map((todo) =>

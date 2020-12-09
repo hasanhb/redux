@@ -1,10 +1,20 @@
-import React from "react"
+import React from "react";
+import { connect } from "react-redux";
 import TodoCard from "./TodoCard";
-const TodoList=()=>{
-    return(
-    <div>
-        <TodoCard/>
+const TodoList = ({ todoList }) => {console.log(todoList)
+  return (
+    <div className="todo-list">
+      {todoList.map((el) => (
+          
+        <TodoCard key={el.id} todo={el} />
+      ))}
     </div>
-    )
-}
-export default  TodoList
+  );
+};
+const mapStateToProps = (state) => {
+  return {
+    todoList: state.todos,
+  };
+};
+
+export default connect(mapStateToProps)(TodoList);
